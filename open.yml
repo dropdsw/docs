@@ -1,0 +1,1959 @@
+openapi: 3.0.3
+info:
+  title: gmb-test
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: http://localhost
+  - url: https://api-temp.gmbapi.com
+  - url: https://test.gmbapi.com
+  - url: app-test.mylocalapi.com
+  - url: https://api.hubapi.com
+  - url: https://api.getpostman.com
+paths:
+  /test/gmb/review/ten-recent:
+    post:
+      tags:
+        - review
+      summary: gmb/review/ten-recent
+      description: gmb/review/ten-recent
+      operationId: gmbReviewTenRecent
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_id:
+                  type: string
+                  example: "105237855855794909169"
+                location_id:
+                  type: string
+                  example: "3257460439662797053"
+                page:
+                  type: number
+                  example: 1
+                recordsPerPage:
+                  type: number
+                  example: 15
+            example:
+              account_id: "105237855855794909169"
+              location_id: "3257460439662797053"
+              page: 1
+              recordsPerPage: 15
+      responses:
+        "200":
+          description: ""
+  /test/gmb/review/kpi/107602779662556445325:
+    get:
+      tags:
+        - review
+      summary: gmb/review/reply
+      description: gmb/review/reply
+      operationId: gmbReviewReply
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: >-
+                    accounts/110403973594798485729/locations/6716936612670797416/reviews/AbFvOqnKxE-W1JaXiHepOGUcI-vpenRgBZP4d_NvnBNgmoFaQuhdaB_krtUDJfLFgUm9zdKbtPB-cw
+                params:
+                  type: object
+                  properties:
+                    comment:
+                      type: string
+                      example: Comment
+            example:
+              name: >-
+                accounts/110403973594798485729/locations/6716936612670797416/reviews/AbFvOqnKxE-W1JaXiHepOGUcI-vpenRgBZP4d_NvnBNgmoFaQuhdaB_krtUDJfLFgUm9zdKbtPB-cw
+              params:
+                comment: Comment
+      responses:
+        "200":
+          description: ""
+  /test/gmb/review/dashboard:
+    post:
+      tags:
+        - review
+      summary: gmb/review/dashboard
+      description: gmb/review/dashboard
+      operationId: gmbReviewDashboard
+      parameters:
+        - name: a
+          in: query
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_id:
+                  type: string
+                  example: "110403973594798485729"
+                page:
+                  type: number
+                  example: 2
+                per_page:
+                  type: number
+                  example: 15
+            example:
+              account_id: "110403973594798485729"
+              page: 2
+              per_page: 15
+      responses:
+        "200":
+          description: ""
+  /test/gmb/review/account:
+    post:
+      tags:
+        - review
+      summary: gmb/review/account
+      description: gmb/review/account
+      operationId: gmbReviewAccount
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_id:
+                  type: string
+                  example: "105237855855794909169"
+                end_date:
+                  type: number
+                  example: 1659293999999
+                page:
+                  type: number
+                  example: 1
+                per_page:
+                  type: number
+                  example: 12
+                q:
+                  type: string
+                  example: ""
+                start_date:
+                  type: number
+                  example: 1656615600000
+            example:
+              account_id: "105237855855794909169"
+              end_date: 1659293999999
+              page: 1
+              per_page: 12
+              q: ""
+              start_date: 1656615600000
+      responses:
+        "200":
+          description: ""
+  /test/gmb/review/location:
+    post:
+      tags:
+        - review
+      summary: gmb/review/location
+      description: gmb/review/location
+      operationId: gmbReviewLocation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                location_id:
+                  type: string
+                  example: "15165338702000505348"
+                page:
+                  type: number
+                  example: 1
+                per_page:
+                  type: number
+                  example: 12
+                q:
+                  type: string
+                  example: ""
+            example:
+              location_id: "15165338702000505348"
+              page: 1
+              per_page: 12
+              q: ""
+      responses:
+        "200":
+          description: ""
+  /test/gmb/review/suggestion:
+    post:
+      tags:
+        - review
+      summary: gmb/review/suggestion
+      description: gmb/review/suggestion
+      operationId: gmbReviewSuggestion
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                review:
+                  type: string
+                  example: >-
+                    Leuke opvang. Leuke medewerkers. Mijn kinderen gaan met veel
+                    plezier. (Translated by Google) Nice shelter. Nice
+                    employees. My kids enjoy going.
+            example:
+              review: >-
+                Leuke opvang. Leuke medewerkers. Mijn kinderen gaan met veel
+                plezier. (Translated by Google) Nice shelter. Nice employees. My
+                kids enjoy going.
+      responses:
+        "200":
+          description: ""
+  /test/gmb/accounts:
+    get:
+      tags:
+        - account
+      summary: /gmb/accounts
+      description: /gmb/accounts
+      operationId: gmbAccounts
+      responses:
+        "200":
+          description: ""
+    post:
+      tags:
+        - account
+      summary: /gmb/accounts
+      description: /gmb/accounts
+      operationId: gmbAccounts1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_id:
+                  type: string
+                  example: 111teeeest
+                account_name:
+                  type: string
+                  example: test
+                users:
+                  type: array
+                  items:
+                    type: string
+                    example: 3NdeMzhKN9Bb6rBCTr4f
+                  example:
+                    - 3NdeMzhKN9Bb6rBCTr4f
+                    - 5Wb603d0CRwrdRn44jwv
+                    - 8LtWAYt0OpYRjWOdLqVO
+                    - 9v1tv5V2PeYgOsAUxP0R
+                    - AhlGWyzJWEO2nSKlouIL
+                    - CzX3GkS2SCHjSFMcOUnm
+                    - IRfAiKGI87qficV6CN5y
+                    - L1ncwLWOAc8XzKB1f4Zn
+                    - Mgdo9BLDwRcT4RV8ZeRr
+                    - MvJcPdmQB6g41Ptp7UGc
+                    - NDbJJW8hivbZoZdwCHkp
+                    - RgTOQfgHDj1cNvN5AX2a
+                    - SJ7c8zsaIS4tBMYfpbIE
+                    - Ud8odvDV4Hja2BKF0UrB
+                    - Vyl9jxPBDHz2raTVU0K4
+                    - Y7eu7D2x08GiwB8mWCHi
+                    - dbSiCece8Dz2FiPNxsGq
+                    - fK09VL0YwEUHAd0nesHG
+                    - nkGo9K0Z2LjOaYQFCnnU
+                    - pFDAZ8pU1ptjGSiLLCHb
+                    - ukNlN1RSe3tFjjwMLd4L
+                    - zlcOohm4s4jGGm0wMNn9
+            example:
+              account_id: 111teeeest
+              account_name: test
+              users:
+                - 3NdeMzhKN9Bb6rBCTr4f
+                - 5Wb603d0CRwrdRn44jwv
+                - 8LtWAYt0OpYRjWOdLqVO
+                - 9v1tv5V2PeYgOsAUxP0R
+                - AhlGWyzJWEO2nSKlouIL
+                - CzX3GkS2SCHjSFMcOUnm
+                - IRfAiKGI87qficV6CN5y
+                - L1ncwLWOAc8XzKB1f4Zn
+                - Mgdo9BLDwRcT4RV8ZeRr
+                - MvJcPdmQB6g41Ptp7UGc
+                - NDbJJW8hivbZoZdwCHkp
+                - RgTOQfgHDj1cNvN5AX2a
+                - SJ7c8zsaIS4tBMYfpbIE
+                - Ud8odvDV4Hja2BKF0UrB
+                - Vyl9jxPBDHz2raTVU0K4
+                - Y7eu7D2x08GiwB8mWCHi
+                - dbSiCece8Dz2FiPNxsGq
+                - fK09VL0YwEUHAd0nesHG
+                - nkGo9K0Z2LjOaYQFCnnU
+                - pFDAZ8pU1ptjGSiLLCHb
+                - ukNlN1RSe3tFjjwMLd4L
+                - zlcOohm4s4jGGm0wMNn9
+      responses:
+        "200":
+          description: ""
+  /test/gmb/id/pPVAeHx0pYbJfq3qyzvX:
+    delete:
+      tags:
+        - account
+      summary: /gmb/accounts/id/:docid
+      description: /gmb/accounts/id/:docid
+      operationId: gmbAccountsIdDocid
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties: {}
+      responses:
+        "200":
+          description: ""
+  /test/gmb/accounts/id/cLAgERELsavgCCDH5IJk:
+    put:
+      tags:
+        - account
+      summary: /gmb/accounts/id/:docid
+      description: /gmb/accounts/id/:docid
+      operationId: gmbAccountsIdDocid1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                users:
+                  type: array
+                  items:
+                    type: string
+                    example: 3NdeMzhKN9Bb6rBCTr4f
+                  example:
+                    - 3NdeMzhKN9Bb6rBCTr4f
+                    - 5Wb603d0CRwrdRn44jwv
+                    - 8LtWAYt0OpYRjWOdLqVO
+                    - 9v1tv5V2PeYgOsAUxP0R
+                    - AhlGWyzJWEO2nSKlouIL
+                    - CzX3GkS2SCHjSFMcOUnm
+                    - IRfAiKGI87qficV6CN5y
+                    - L1ncwLWOAc8XzKB1f4Zn
+                    - Mgdo9BLDwRcT4RV8ZeRr
+                    - MvJcPdmQB6g41Ptp7UGc
+                    - NDbJJW8hivbZoZdwCHkp
+                    - RgTOQfgHDj1cNvN5AX2a
+                    - SJ7c8zsaIS4tBMYfpbIE
+                    - Ud8odvDV4Hja2BKF0UrB
+                    - Vyl9jxPBDHz2raTVU0K4
+                    - Y7eu7D2x08GiwB8mWCHi
+                    - dbSiCece8Dz2FiPNxsGq
+                    - fK09VL0YwEUHAd0nesHG
+                    - nkGo9K0Z2LjOaYQFCnnU
+                    - pFDAZ8pU1ptjGSiLLCHb
+                    - ukNlN1RSe3tFjjwMLd4L
+                    - zlcOohm4s4jGGm0wMNn9
+            example:
+              users:
+                - 3NdeMzhKN9Bb6rBCTr4f
+                - 5Wb603d0CRwrdRn44jwv
+                - 8LtWAYt0OpYRjWOdLqVO
+                - 9v1tv5V2PeYgOsAUxP0R
+                - AhlGWyzJWEO2nSKlouIL
+                - CzX3GkS2SCHjSFMcOUnm
+                - IRfAiKGI87qficV6CN5y
+                - L1ncwLWOAc8XzKB1f4Zn
+                - Mgdo9BLDwRcT4RV8ZeRr
+                - MvJcPdmQB6g41Ptp7UGc
+                - NDbJJW8hivbZoZdwCHkp
+                - RgTOQfgHDj1cNvN5AX2a
+                - SJ7c8zsaIS4tBMYfpbIE
+                - Ud8odvDV4Hja2BKF0UrB
+                - Vyl9jxPBDHz2raTVU0K4
+                - Y7eu7D2x08GiwB8mWCHi
+                - dbSiCece8Dz2FiPNxsGq
+                - fK09VL0YwEUHAd0nesHG
+                - nkGo9K0Z2LjOaYQFCnnU
+                - pFDAZ8pU1ptjGSiLLCHb
+                - ukNlN1RSe3tFjjwMLd4L
+                - zlcOohm4s4jGGm0wMNn9
+      responses:
+        "200":
+          description: ""
+  /test/gmb/locations:
+    get:
+      tags:
+        - location
+      summary: /gmb/locations
+      description: /gmb/locations
+      operationId: gmbLocations
+      responses:
+        "200":
+          description: ""
+    post:
+      tags:
+        - location
+      summary: /gmb/locations
+      description: /gmb/locations
+      operationId: gmbLocations1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                address:
+                  type: string
+                  example: test address
+                city:
+                  type: string
+                  example: Eindhoven
+                country_code:
+                  type: string
+                  example: NL
+                location_id:
+                  type: string
+                  example: "123321"
+                name:
+                  type: string
+                  example: test store
+                postal:
+                  type: string
+                  example: 0000 AB
+                store_code:
+                  type: string
+                  example: 123D
+            example:
+              address: test address
+              city: Eindhoven
+              country_code: NL
+              location_id: "123321"
+              name: test store
+              postal: 0000 AB
+              store_code: 123D
+      responses:
+        "200":
+          description: ""
+  /test/gmb/locations/id/3485101175971921840:
+    get:
+      tags:
+        - location
+      summary: /gmb/locations/id/:id
+      description: /gmb/locations/id/:id
+      operationId: gmbLocationsIdId
+      responses:
+        "200":
+          description: ""
+  /test/gmb/locations/account/109088452112706925222:
+    get:
+      tags:
+        - location
+      summary: /gmb/locations/account/:id
+      description: /gmb/locations/account/:id
+      operationId: gmbLocationsAccountId
+      responses:
+        "200":
+          description: ""
+  /test/gmb/locations/id/123321:
+    delete:
+      tags:
+        - location
+      summary: /gmb/locations/id/:id
+      description: /gmb/locations/id/:id
+      operationId: gmbLocationsIdId1
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties: {}
+      responses:
+        "200":
+          description: ""
+  /test/gmb/account_location/label/106596649229815513416:
+    get:
+      tags:
+        - account_location
+      summary: /gmb/account_location/label/:id
+      description: /gmb/account_location/label/:id
+      operationId: gmbAccountLocationLabelId
+      responses:
+        "200":
+          description: ""
+  /test/gmb/account_location/location/6104486253588494030:
+    get:
+      tags:
+        - account_location
+      summary: /gmb/account_location/location/:id
+      description: /gmb/account_location/location/:id
+      operationId: gmbAccountLocationLocationId
+      responses:
+        "200":
+          description: ""
+  /test/gmb/account_location/account/110548430531769439220:
+    get:
+      tags:
+        - account_location
+      summary: /gmb/account_location/account/:id
+      description: /gmb/account_location/account/:id
+      operationId: gmbAccountLocationAccountId
+      responses:
+        "200":
+          description: ""
+  /test/gmb/account_location/profile/6411416547094348391:
+    get:
+      tags:
+        - account_location
+      summary: /gmb/account_location/profile/:loc_id
+      description: /gmb/account_location/profile/:loc_id
+      operationId: gmbAccountLocationProfileLocId
+      responses:
+        "200":
+          description: ""
+  /test/gmb/account_location:
+    post:
+      tags:
+        - account_location
+      summary: /gmb/account_location
+      description: /gmb/account_location
+      operationId: gmbAccountLocation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_id:
+                  type: string
+                  example: "321321"
+                address:
+                  type: string
+                  example: Bakkerstraat 38a
+                city:
+                  type: string
+                  example: Eindhoven
+                label:
+                  type: array
+                  items:
+                    type: string
+                    example: test
+                  example:
+                    - test
+                location_id:
+                  type: string
+                  example: "123123"
+            example:
+              account_id: "321321"
+              address: Bakkerstraat 38a
+              city: Eindhoven
+              label:
+                - test
+              location_id: "123123"
+      responses:
+        "200":
+          description: ""
+  /test/gmb/account_location/account/pagination:
+    post:
+      tags:
+        - account_location
+      summary: /gmb/account_location/pagination
+      description: /gmb/account_location/pagination
+      operationId: gmbAccountLocationPagination
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_id:
+                  type: string
+                  example: "105237855855794909169"
+            example:
+              account_id: "105237855855794909169"
+      responses:
+        "200":
+          description: ""
+  /test/gmb/account_location/location/123123:
+    delete:
+      tags:
+        - account_location
+      summary: /gmb/account_location/location/:id
+      description: /gmb/account_location/location/:id
+      operationId: gmbAccountLocationLocationId1
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties: {}
+      responses:
+        "200":
+          description: ""
+  /test/gmb/access_by_user:
+    get:
+      tags:
+        - access_by_user
+      summary: /gmb/access_by_user/
+      description: /gmb/access_by_user/
+      operationId: gmbAccessByUser
+      responses:
+        "200":
+          description: ""
+    post:
+      tags:
+        - access_by_user
+      summary: /gmb/access_by_user/
+      description: /gmb/access_by_user/
+      operationId: gmbAccessByUser1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: string
+                  example: c3b22393-b53b-4de0-807b-465e0988722d
+                name:
+                  type: string
+                  example: test Denys
+            example:
+              code: c3b22393-b53b-4de0-807b-465e0988722d
+              name: test Denys
+      responses:
+        "200":
+          description: ""
+  /test/gmb/access_by_user/invite:
+    post:
+      tags:
+        - access_by_user
+      summary: /gmb/activation_code/code/:code Copy
+      description: /gmb/activation_code/code/:code Copy
+      operationId: gmbActivationCodeCodeCodeCopy
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: drop.dsw@gmail.com
+                name:
+                  type: string
+                  example: Gergan test
+                role:
+                  type: string
+                  example: user
+            example:
+              email: drop.dsw@gmail.com
+              name: Gergan test
+              role: user
+      responses:
+        "200":
+          description: ""
+  /test/gmb/access_by_user/id/bunepJ1Q3BkeNJVYCcns:
+    put:
+      tags:
+        - access_by_user
+      summary: /gmb/access_by_user/id/:id
+      description: /gmb/access_by_user/id/:id
+      operationId: gmbAccessByUserIdId
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: "123"
+                name:
+                  type: string
+                  example: Denys
+                role:
+                  type: string
+                  example: user
+            example:
+              email: "123"
+              name: Denys
+              role: user
+      responses:
+        "200":
+          description: ""
+    delete:
+      tags:
+        - access_by_user
+      summary: /gmb/access_by_user/id/:id
+      description: /gmb/access_by_user/id/:id
+      operationId: gmbAccessByUserIdId1
+      responses:
+        "200":
+          description: ""
+  /test/gmb/gmb/activation_code/:
+    get:
+      tags:
+        - activation_code
+      summary: /gmb/activation_code/code/:code
+      description: /gmb/activation_code/code/:code
+      operationId: gmbActivationCodeCodeCode
+      responses:
+        "200":
+          description: ""
+  /test/gmb/activation_code:
+    post:
+      tags:
+        - activation_code
+      summary: /gmb/activation_code/code/:code
+      description: /gmb/activation_code/code/:code
+      operationId: gmbActivationCodeCodeCode1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                roles:
+                  type: array
+                  items:
+                    type: string
+                    example: 2GssaFKLA5iwxkpCrhiK
+                  example:
+                    - 2GssaFKLA5iwxkpCrhiK
+            example:
+              roles:
+                - 2GssaFKLA5iwxkpCrhiK
+      responses:
+        "200":
+          description: ""
+  /test/gmb/activation_code/code/CrD7oBl2L6urukvs49pJ:
+    put:
+      tags:
+        - activation_code
+      summary: /gmb/activation_code/code/:code
+      description: /gmb/activation_code/code/:code
+      operationId: gmbActivationCodeCodeCode2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                roles:
+                  type: array
+                  items:
+                    type: string
+                    example: 8ZU4P3cJYXgcUaR5wijF
+                  example:
+                    - 8ZU4P3cJYXgcUaR5wijF
+            example:
+              roles:
+                - 8ZU4P3cJYXgcUaR5wijF
+      responses:
+        "200":
+          description: ""
+  /test/gmb/activation_code/code/JgQ2xYAaFB0lIUL5csNh:
+    delete:
+      tags:
+        - activation_code
+      summary: /gmb/activation_code/code/:code
+      description: /gmb/activation_code/code/:code
+      operationId: gmbActivationCodeCodeCode3
+      requestBody:
+        content:
+          text/plain:
+            example: ""
+      responses:
+        "200":
+          description: ""
+  /test/gmb/qrcodes/page/1:
+    get:
+      tags:
+        - qrcodes
+      summary: /gmb/qrcodes/page/:page
+      description: /gmb/qrcodes/page/:page
+      operationId: gmbQrcodesPagePage
+      responses:
+        "200":
+          description: ""
+  /test/gmb/qrcodes/1/page/1:
+    get:
+      tags:
+        - qrcodes
+      summary: /gmb/qrcodes/:acc_id/page/:page
+      description: /gmb/qrcodes/:acc_id/page/:page
+      operationId: gmbQrcodesAccIdPagePage
+      responses:
+        "200":
+          description: ""
+  /test/gmb/qrcodes/117855643630386269934/city/Magdeburg/page/1:
+    get:
+      tags:
+        - qrcodes
+      summary: /gmb/qrcodes/:acc_id/city/:city_name/page/:page
+      description: /gmb/qrcodes/:acc_id/city/:city_name/page/:page
+      operationId: gmbQrcodesAccIdCityCityNamePagePage
+      responses:
+        "200":
+          description: ""
+  /test/gmb/qrcodes/117855643630386269934/name/Hunkemöller/page/1:
+    get:
+      tags:
+        - qrcodes
+      summary: /gmb/qrcodes/:acc_id/name/:name/page/:page
+      description: /gmb/qrcodes/:acc_id/name/:name/page/:page
+      operationId: gmbQrcodesAccIdNameNamePagePage
+      responses:
+        "200":
+          description: ""
+  /test/gmb/qrcodes:
+    post:
+      tags:
+        - qrcodes
+      summary: /gmb/qrcodes
+      description: /gmb/qrcodes
+      operationId: gmbQrcodes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_id:
+                  type: string
+                  example: "110403973594798485729"
+                base_url:
+                  type: string
+                  example: http://localhost:3000/
+                location_id:
+                  type: array
+                  items:
+                    type: string
+                    example: "12441271562652239988"
+                  example:
+                    - "12441271562652239988"
+                    - "6716936612670797416"
+                    - "1958581011399603964"
+            example:
+              account_id: "110403973594798485729"
+              base_url: http://localhost:3000/
+              location_id:
+                - "12441271562652239988"
+                - "6716936612670797416"
+                - "1958581011399603964"
+      responses:
+        "200":
+          description: ""
+  /test/gmb/qrcodes/download:
+    post:
+      tags:
+        - qrcodes
+      summary: /gmb/qrcodes/download
+      description: /gmb/qrcodes/download
+      operationId: gmbQrcodesDownload
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: drop.dsw@gmail.com
+            example:
+              email: drop.dsw@gmail.com
+      responses:
+        "200":
+          description: ""
+  /test/gmb/qrcodes/pdf:
+    post:
+      tags:
+        - qrcodes
+      summary: /gmb/qrcodes/pdf
+      description: /gmb/qrcodes/pdf
+      operationId: gmbQrcodesPdf
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_id:
+                  type: string
+                  example: "116623808389538661781"
+                location_id:
+                  type: string
+                  example: "16748691037293173903"
+            example:
+              account_id: "116623808389538661781"
+              location_id: "16748691037293173903"
+      responses:
+        "200":
+          description: ""
+  /test/gmb/qrcodes/search_txt:
+    post:
+      tags:
+        - qrcodes
+      summary: /gmb/qrcodes/search_txt
+      description: /gmb/qrcodes/search_txt
+      operationId: gmbQrcodesSearchTxt
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_id:
+                  type: string
+                  example: ""
+                page:
+                  type: number
+                  example: 1
+                search:
+                  type: string
+                  example: pets
+            example:
+              account_id: ""
+              page: 1
+              search: pets
+      responses:
+        "200":
+          description: ""
+  /test/gmb/feedback:
+    get:
+      tags:
+        - feedback
+      summary: /gmb/feedback
+      description: /gmb/feedback
+      operationId: gmbFeedback
+      responses:
+        "200":
+          description: ""
+    post:
+      tags:
+        - feedback
+      summary: /gmb/feedback
+      description: /gmb/feedback
+      operationId: gmbFeedback1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_id:
+                  type: string
+                  example: "110403973594798485729"
+                comment:
+                  type: string
+                  example: test msg2
+                email:
+                  type: string
+                  example: denys@analytics.co.uk
+                location_id:
+                  type: string
+                  example: "6716936612670797416"
+                name:
+                  type: string
+                  example: Denys
+                overall_score:
+                  type: string
+                  example: "4"
+                place_score:
+                  type: string
+                  example: "3"
+                price_score:
+                  type: string
+                  example: "3"
+                service_score:
+                  type: string
+                  example: "4"
+            example:
+              account_id: "110403973594798485729"
+              comment: test msg2
+              email: denys@analytics.co.uk
+              location_id: "6716936612670797416"
+              name: Denys
+              overall_score: "4"
+              place_score: "3"
+              price_score: "3"
+              service_score: "4"
+      responses:
+        "200":
+          description: ""
+  /test/gmb/feedback/account/1:
+    get:
+      tags:
+        - feedback
+      summary: /gmb/feedback/account/:id
+      description: /gmb/feedback/account/:id
+      operationId: gmbFeedbackAccountId
+      responses:
+        "200":
+          description: ""
+  /test/gmb/feedback/location/3:
+    get:
+      tags:
+        - feedback
+      summary: /gmb/feedback/location/:id
+      description: /gmb/feedback/location/:id
+      operationId: gmbFeedbackLocationId
+      responses:
+        "200":
+          description: ""
+  /test/gmb/feedback/1/3:
+    get:
+      tags:
+        - feedback
+      summary: /gmb/feedback/:acc_id/:loc_id
+      description: /gmb/feedback/:acc_id/:loc_id
+      operationId: gmbFeedbackAccIdLocId
+      responses:
+        "200":
+          description: ""
+  /test/gmb/feedback/review:
+    post:
+      tags:
+        - feedback
+      summary: /gmb/feedback/review
+      description: /gmb/feedback/review
+      operationId: gmbFeedbackReview
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_id:
+                  type: string
+                  example: "109088452112706925222"
+                location_id:
+                  type: string
+                  example: "12400984278460535930"
+            example:
+              account_id: "109088452112706925222"
+              location_id: "12400984278460535930"
+      responses:
+        "200":
+          description: ""
+  /test/health-check:
+    get:
+      tags:
+        - post
+      summary: /gmb/post
+      description: /gmb/post
+      operationId: gmbPost
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account:
+                  type: string
+                  example: "110403973594798485729"
+                locations:
+                  type: array
+                  items:
+                    type: string
+                    example: "1958581011399603964"
+                  example:
+                    - "1958581011399603964"
+                params:
+                  type: object
+                  properties:
+                    callToAction:
+                      type: object
+                      properties:
+                        actionType:
+                          type: string
+                          example: LEARN_MORE
+                        url:
+                          type: string
+                          example: https://gmbapi.com/
+                    languageCode:
+                      type: string
+                      example: en
+                    media:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          mediaFormat:
+                            type: string
+                            example: PHOTO
+                          sourceUrl:
+                            type: string
+                            example: >-
+                              https://lh3.googleusercontent.com/geougc/AF1QipOTEcSVmpGOsWiLQdqUXN9b1egdly7GBTfxjO3W=h305-no
+                      example:
+                        - mediaFormat: PHOTO
+                          sourceUrl: >-
+                            https://lh3.googleusercontent.com/geougc/AF1QipOTEcSVmpGOsWiLQdqUXN9b1egdly7GBTfxjO3W=h305-no
+                    summary:
+                      type: string
+                      example: >-
+                        We are launching a string of improvements today in our
+                        Multi Location Local Search SAAS tool.  We are
+                        incorporating the new data from Google - and removing
+                        the deprecated items. So a few new graphs and some of
+                        the data you used to have access to was deprecated by
+                        Google. Most exciting launch will be the access to
+                        actual Search terms. We are importing the reviewers name
+                        and photo in the review section so answering will be
+                        simpler. We are improving the UX in the review section
+                        making it faster for users to open a review to reply to
+                        it. We are launching the ability to schedule posts.
+                    topicType:
+                      type: string
+                      example: STANDARD
+            example:
+              account: "110403973594798485729"
+              locations:
+                - "1958581011399603964"
+              params:
+                callToAction:
+                  actionType: LEARN_MORE
+                  url: https://gmbapi.com/
+                languageCode: en
+                media:
+                  - mediaFormat: PHOTO
+                    sourceUrl: >-
+                      https://lh3.googleusercontent.com/geougc/AF1QipOTEcSVmpGOsWiLQdqUXN9b1egdly7GBTfxjO3W=h305-no
+                summary: >-
+                  We are launching a string of improvements today in our Multi
+                  Location Local Search SAAS tool.  We are incorporating the new
+                  data from Google - and removing the deprecated items. So a few
+                  new graphs and some of the data you used to have access to was
+                  deprecated by Google. Most exciting launch will be the access
+                  to actual Search terms. We are importing the reviewers name
+                  and photo in the review section so answering will be simpler.
+                  We are improving the UX in the review section making it faster
+                  for users to open a review to reply to it. We are launching
+                  the ability to schedule posts.
+                topicType: STANDARD
+      responses:
+        "200":
+          description: ""
+  /test/gmb/post/search:
+    post:
+      tags:
+        - post
+      summary: /gmb/post Copy
+      description: /gmb/post Copy
+      operationId: gmbPostCopy
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_id:
+                  type: string
+                  example: "110548430531769439220"
+                page:
+                  type: number
+                  example: 1
+                per_page:
+                  type: number
+                  example: 12
+                q:
+                  type: string
+                  example: ""
+            example:
+              account_id: "110548430531769439220"
+              page: 1
+              per_page: 12
+              q: ""
+      responses:
+        "200":
+          description: ""
+  /test/gmb/post/schedule:
+    post:
+      tags:
+        - post
+      summary: /gmb/schedule
+      description: /gmb/schedule
+      operationId: gmbSchedule
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account:
+                  type: string
+                  example: "110403973594798485729"
+                date:
+                  type: string
+                  example: "10"
+                locations:
+                  type: array
+                  items:
+                    type: string
+                    example: "6716936612670797416"
+                  example:
+                    - "6716936612670797416"
+                month:
+                  type: string
+                  example: "02"
+                params:
+                  type: object
+                  properties:
+                    callToAction:
+                      type: object
+                      properties:
+                        actionType:
+                          type: string
+                          example: LEARN_MORE
+                        url:
+                          type: string
+                          example: >-
+                            https://analytics.co.uk/news/most-reviewed-digital-marketing-agencies-2022/?utm_source=GMB&utm_medium=social&utm_campaign=post
+                    languageCode:
+                      type: string
+                      example: en
+                    media:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          mediaFormat:
+                            type: string
+                            example: PHOTO
+                          sourceUrl:
+                            type: string
+                            example: >-
+                              https://lh3.googleusercontent.com/geougc/AF1QipMfLqMvGKRa8jREfe2HXJ0XumA0zLArju6wM_lu=h305-no
+                      example:
+                        - mediaFormat: PHOTO
+                          sourceUrl: >-
+                            https://lh3.googleusercontent.com/geougc/AF1QipMfLqMvGKRa8jREfe2HXJ0XumA0zLArju6wM_lu=h305-no
+                    summary:
+                      type: string
+                      example: >-
+                        Up Analytics has been recognised as one of the most
+                        reviewed digital marketing agencies in The Netherlands
+                        by The Manifest. Read all about it in our blog.
+                    topicType:
+                      type: string
+                      example: STANDARD
+                time:
+                  type: string
+                  example: "11:12"
+                year:
+                  type: string
+                  example: "2023"
+            example:
+              account: "110403973594798485729"
+              date: "10"
+              locations:
+                - "6716936612670797416"
+              month: "02"
+              params:
+                callToAction:
+                  actionType: LEARN_MORE
+                  url: >-
+                    https://analytics.co.uk/news/most-reviewed-digital-marketing-agencies-2022/?utm_source=GMB&utm_medium=social&utm_campaign=post
+                languageCode: en
+                media:
+                  - mediaFormat: PHOTO
+                    sourceUrl: >-
+                      https://lh3.googleusercontent.com/geougc/AF1QipMfLqMvGKRa8jREfe2HXJ0XumA0zLArju6wM_lu=h305-no
+                summary: >-
+                  Up Analytics has been recognised as one of the most reviewed
+                  digital marketing agencies in The Netherlands by The Manifest.
+                  Read all about it in our blog.
+                topicType: STANDARD
+              time: "11:12"
+              year: "2023"
+      responses:
+        "200":
+          description: ""
+  /test/gmb/post/delete:
+    post:
+      tags:
+        - post
+      summary: /gmb/post/delete
+      description: /gmb/post/delete
+      operationId: gmbPostDelete
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: >-
+                    accounts/110403973594798485729/locations/1958581011399603964/localPosts/745016520345684439
+            example:
+              name: >-
+                accounts/110403973594798485729/locations/1958581011399603964/localPosts/745016520345684439
+      responses:
+        "200":
+          description: ""
+  /test/gmb/post/delete/group:
+    post:
+      tags:
+        - post
+      summary: /gmb/post/delete/group
+      description: /gmb/post/delete/group
+      operationId: gmbPostDeleteGroup
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                post_id:
+                  type: string
+                  example: 4a5cc6f7-6188-403b-ade1-f9595e8b9f79
+            example:
+              post_id: 4a5cc6f7-6188-403b-ade1-f9595e8b9f79
+      responses:
+        "200":
+          description: ""
+  /test/gmb/post/dashboard/108328115310686183515:
+    get:
+      tags:
+        - post
+      summary: /gmb/post/dashboard
+      description: /gmb/post/dashboard
+      operationId: gmbPostDashboard
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: string
+            example: "1"
+      responses:
+        "200":
+          description: ""
+  /notify/test:
+    get:
+      tags:
+        - post
+      summary: /gmb/post/test
+      description: /gmb/post/test
+      operationId: gmbPostTest
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+            example: "100441088497834937198"
+      responses:
+        "200":
+          description: ""
+  /test/gmb/KPI/account-kpi/110403973594798485729:
+    get:
+      tags:
+        - KPI
+      summary: /gmb/KPI/account-kpi/:acc_id
+      description: /gmb/KPI/account-kpi/:acc_id
+      operationId: gmbKpiAccountKpiAccId
+      responses:
+        "200":
+          description: ""
+  /test/gmb/KPI/account-location-kpi:
+    post:
+      tags:
+        - KPI
+      summary: /gmb/KPI/account-location-kpi
+      description: /gmb/KPI/account-location-kpi
+      operationId: gmbKpiAccountLocationKpi
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_id:
+                  type: string
+                  example: "109214914264558712544"
+                filter:
+                  type: string
+                  example: 1months
+                labels:
+                  type: array
+                  items:
+                    type: string
+                    example: technolgies
+                  example:
+                    - technolgies
+            example:
+              account_id: "109214914264558712544"
+              filter: 1months
+              labels:
+                - technolgies
+      responses:
+        "200":
+          description: ""
+  /test/gmb/KPI/review-account/110403973594798485729:
+    get:
+      tags:
+        - KPI
+      summary: /gmb/KPI/review-account/:acc_id
+      description: /gmb/KPI/review-account/:acc_id
+      operationId: gmbKpiReviewAccountAccId
+      responses:
+        "200":
+          description: ""
+  /test/gmb/KPI/review-location/4044772177224160302:
+    get:
+      tags:
+        - KPI
+      summary: /gmb/KPI/review-location/:acc_id
+      description: /gmb/KPI/review-location/:acc_id
+      operationId: gmbKpiReviewLocationAccId
+      responses:
+        "200":
+          description: ""
+  /api/gmb/auth/signin:
+    get:
+      tags:
+        - auth
+      summary: /gmb/auth/signin
+      description: /gmb/auth/signin
+      operationId: gmbAuthSignin
+      parameters:
+        - name: activation_code
+          in: query
+          schema:
+            type: string
+            example: aac672cb-f8a8-4abc-b5c3-e9208a327b86
+      responses:
+        "200":
+          description: ""
+  /test/gmb/auth/signin-admin:
+    get:
+      tags:
+        - auth
+      summary: /gmb/auth/signin-admin
+      description: /gmb/auth/signin-admin
+      operationId: gmbAuthSigninAdmin
+      responses:
+        "200":
+          description: ""
+  /test/gmb/attribute/account:
+    post:
+      tags:
+        - "attribute "
+      summary: gmb/attribute/account
+      description: gmb/attribute/account
+      operationId: gmbAttributeAccount
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_id:
+                  type: string
+                  example: "105237855855794909169"
+            example:
+              account_id: "105237855855794909169"
+      responses:
+        "200":
+          description: ""
+  /test/gmb/attribute/account/105237855855794909169:
+    get:
+      tags:
+        - "attribute "
+      summary: gmb/attribute/account/105237855855794909169
+      description: gmb/attribute/account/105237855855794909169
+      operationId: gmbAttributeAccount105237855855794909169
+      responses:
+        "200":
+          description: ""
+  /test/gmb/attribute/unique/9607186404236473838:
+    get:
+      tags:
+        - "attribute "
+      summary: gmb/attribute/unique/:loc_id
+      description: gmb/attribute/unique/:loc_id
+      operationId: gmbAttributeUniqueLocId
+      responses:
+        "200":
+          description: ""
+  /test/gmb/question/reply:
+    post:
+      tags:
+        - question
+      summary: gmb/question/reply
+      description: gmb/question/reply
+      operationId: gmbQuestionReply
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                question_name:
+                  type: string
+                  example: >-
+                    locations/2273080438844907010/questions/AIe9_BHknFajYLCY9NfgBafSx8biHpDYfEtoWEfEwGHcHcNtOWMw6MecSjHwWSkmJkQkmWyHER-rNo-oe_4DOGoEcmIYWU-p_BVAX988S79q8wbSeBjokY97q4UX4jSVCvsh-n1-vIRd
+                text:
+                  type: string
+                  example: Thanks for leaving 5 star rating.
+            example:
+              question_name: >-
+                locations/2273080438844907010/questions/AIe9_BHknFajYLCY9NfgBafSx8biHpDYfEtoWEfEwGHcHcNtOWMw6MecSjHwWSkmJkQkmWyHER-rNo-oe_4DOGoEcmIYWU-p_BVAX988S79q8wbSeBjokY97q4UX4jSVCvsh-n1-vIRd
+              text: Thanks for leaving 5 star rating.
+      responses:
+        "200":
+          description: ""
+  /test/gmb/question/search:
+    post:
+      tags:
+        - question
+      summary: gmb/question/search
+      description: gmb/question/search
+      operationId: gmbQuestionSearch
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_id:
+                  type: string
+                  example: "109088452112706925222"
+                end_date:
+                  type: number
+                  example: 1652275806855
+                has_answer:
+                  type: boolean
+                  example: true
+                labels:
+                  type: array
+                  items:
+                    type: string
+                    example: Germany
+                  example:
+                    - Germany
+                page:
+                  type: number
+                  example: 1
+                per_page:
+                  type: number
+                  example: 12
+                start_date:
+                  type: number
+                  example: 1600275806855
+            example:
+              account_id: "109088452112706925222"
+              end_date: 1652275806855
+              has_answer: true
+              labels:
+                - Germany
+              page: 1
+              per_page: 12
+              start_date: 1600275806855
+      responses:
+        "200":
+          description: ""
+  /test/gmb/template/117836807618898488789:
+    get:
+      tags:
+        - template
+      summary: test/gmb/gmb/template/:acc_id
+      description: test/gmb/gmb/template/:acc_id
+      operationId: testGmbGmbTemplateAccId
+      responses:
+        "200":
+          description: ""
+  /test/gmb/template:
+    put:
+      tags:
+        - template
+      summary: test/gmb/gmb/template
+      description: test/gmb/gmb/template
+      operationId: testGmbGmbTemplate1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_id:
+                  type: string
+                  example: "123"
+                template_id:
+                  type: string
+                  example: df6002b9-c9e2-4559-8a47-a10a7a89a4e0
+                template_name:
+                  type: string
+                  example: test
+                template_text:
+                  type: string
+                  example: test12121212
+            example:
+              account_id: "123"
+              template_id: df6002b9-c9e2-4559-8a47-a10a7a89a4e0
+              template_name: test
+              template_text: test12121212
+      responses:
+        "200":
+          description: ""
+    post:
+      tags:
+        - template
+      summary: test/gmb/gmb/template
+      description: test/gmb/gmb/template
+      operationId: testGmbGmbTemplate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_id:
+                  type: string
+                  example: "123"
+                template_name:
+                  type: string
+                  example: test
+                template_text:
+                  type: string
+                  example: test1
+            example:
+              account_id: "123"
+              template_name: test
+              template_text: test1
+      responses:
+        "200":
+          description: ""
+  /test/gmb/template/123/df6002b9-c9e2-4559-8a47-a10a7a89a4e0:
+    delete:
+      tags:
+        - template
+      summary: test/gmb/template/:acc_id/:temp_id
+      description: test/gmb/template/:acc_id/:temp_id
+      operationId: testGmbTemplateAccIdTempId
+      responses:
+        "200":
+          description: ""
+  /test/gmb/review/summary:
+    post:
+      tags:
+        - reviewSummary
+      summary: /gmb/post Copy
+      description: /gmb/post Copy
+      operationId: gmbPostCopy1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_id:
+                  type: string
+                  example: "109088452112706925222"
+                num_reviews:
+                  type: number
+                  example: 12
+            example:
+              account_id: "109088452112706925222"
+              num_reviews: 12
+      responses:
+        "200":
+          description: ""
+  /api/gmb/admin_user/invite/100246172233807529242:
+    post:
+      tags:
+        - notifications
+      summary: New Request
+      description: New Request
+      operationId: newRequest
+      parameters:
+        - name: App-Origin
+          in: query
+          schema:
+            type: string
+            example: app-test.mylocalapi.com
+        - name: Au
+          in: query
+          schema:
+            type: string
+        - name: app-origin
+          in: header
+          schema:
+            type: string
+            example: app-test.mylocalapi.com
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: drop.dsw@gmail.com
+                name:
+                  type: string
+                  example: Denys
+                role:
+                  type: string
+                  example: USER
+            example:
+              email: drop.dsw@gmail.com
+              name: Denys
+              role: USER
+      responses:
+        "200":
+          description: ""
+  /api/gmb/notification/unsubscribe/token/275a7957-279f-4c62-b0ff-f2234a045371:
+    delete:
+      tags:
+        - notifications
+      summary: New Request Copy
+      description: New Request Copy
+      operationId: newRequestCopy
+      parameters:
+        - name: App-Origin
+          in: query
+          schema:
+            type: string
+            example: app.gmbapi.com
+        - name: Authorization
+          in: query
+          schema:
+            type: string
+            example: >-
+              Bearer
+              eyJhbGciOiJSUzI1NiIsImtpZCI6ImJhNjI1OTZmNTJmNTJlZDQ0MDQ5Mzk2YmU3ZGYzNGQyYzY0ZjQ1M2UiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiRGVueXMgU3l0bnlrIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FHTm15eFl4RHVUclJveHNsdmlFYnNpMTBaQzFDZGFyUTBkbjBCUGZqVmFiPXM5Ni1jIiwiYWNjb3VudF9pZCI6IjExMDQwMzk3MzU5NDc5ODQ4NTcyOSIsImFjY291bnRfbmFtZSI6IlVwIEFuYWx5dGljcyIsImFjY291bnRfcm9sZSI6Ik1BTkFHRVIiLCJiaWxsaW5nX3N0YXRlIjoiQUNUSVZFIiwidHJpYWxfZW5kX2RhdGUiOnsiX3NlY29uZHMiOjE3MTAzMjMzNTcsIl9uYW5vc2Vjb25kcyI6NDEzMDAwMDAwfSwiYWNjZXNzX2xldmVsIjoiVVNFUiIsImFkbWluIjp0cnVlLCJvcmlnaW4iOiJhcHAuZ21iYXBpLmNvbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS91cC1hbmFseXRpY3MtYWVhYzIiLCJhdWQiOiJ1cC1hbmFseXRpY3MtYWVhYzIiLCJhdXRoX3RpbWUiOjE3MTE0NjE2NjgsInVzZXJfaWQiOiJUQjNBYXNwN3QwUnNqamwzOGRzTzBPYnFCRmYxIiwic3ViIjoiVEIzQWFzcDd0MFJzampsMzhkc08wT2JxQkZmMSIsImlhdCI6MTcxMTQ2MTcyMCwiZXhwIjoxNzExNDY1MzIwLCJlbWFpbCI6ImRlbnlzQGFuYWx5dGljcy5jby51ayIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7Imdvb2dsZS5jb20iOlsiMTE2NjExMjk2NjUxMjM3NjA1NjgyIl0sImVtYWlsIjpbImRlbnlzQGFuYWx5dGljcy5jby51ayJdfSwic2lnbl9pbl9wcm92aWRlciI6Imdvb2dsZS5jb20ifX0.KYyjMVovuE-GJuzvMNjeCRfk1qJhRcAflX_n-JeQBI9VlwjPWaacJ3wJme_rHOZC7bicZN6sLb3fNfsHS7vXaPUptZPv-A--5KX2zwBqQh6-J5qYccwYDIJUZUr2L-4tAtAEJuu4qsnBqlrFu-DlwS6uTleNRvvYqcLpFqd4tbBRRKrWlI-LThYjdh25OAt0MxGzkD2vTfyxMKXgueQscGpi_24BfeqNLb5mZw3Uidu7-Y0j6EvKRsYWFNqCYJV0H1048x9b6yf9xcLxuYUEy4b7Ny2dRJI8p8NhNHq9ThPDHNortgDK_WhxW9T0t0ZnhdqQtJS3KqO5UM3ktiyahw
+        - name: app-origin
+          in: header
+          schema:
+            type: string
+            example: app-test.mylocalapi.com
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: drop.dsw@gmail.com
+                name:
+                  type: string
+                  example: Denys 2
+                role:
+                  type: string
+                  example: USER
+            example:
+              email: drop.dsw@gmail.com
+              name: Denys 2
+              role: USER
+      responses:
+        "200":
+          description: ""
+  /scan:
+    post:
+      tags:
+        - notifications
+      summary: New Request Copy 3
+      description: New Request Copy 3
+      operationId: newRequestCopy3
+      parameters:
+        - name: Authorization
+          in: query
+          schema:
+            type: string
+            example: >-
+              Bearer
+              eyJhbGciOiJSUzI1NiIsImtpZCI6IjJkOWI0ZTY5ZTMyYjc2MTVkNGNkN2NhZmI4ZmM5YjNmODFhNDFhYzAiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiRGVueXMgU3l0bnlrIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FMbTV3dTMwS1M4Si1sWGkyQUhra2NRUzBjZjBxZnl1dHVjU3lZQmNNZzdiPXM5Ni1jIiwiYWNjb3VudF9pZCI6IjExMDQwMzk3MzU5NDc5ODQ4NTcyOSIsImFjY291bnRfbmFtZSI6IlVwIEFuYWx5dGljcyIsImFjY291bnRfcm9sZSI6Ik1BTkFHRVIiLCJiaWxsaW5nX3N0YXRlIjoiQUNUSVZFIiwidHJpYWxfZW5kX2RhdGUiOnsiX3NlY29uZHMiOjE3MTE5OTk5NjYsIl9uYW5vc2Vjb25kcyI6NTAwMDAwMDB9LCJhY2Nlc3NfbGV2ZWwiOiJPV05FUiIsImFkbWluIjp0cnVlLCJvcmlnaW4iOiJhcHAtdGVzdC5teWxvY2FsYXBpLmNvbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS91cC1hbmFseXRpY3MtdGVzdCIsImF1ZCI6InVwLWFuYWx5dGljcy10ZXN0IiwiYXV0aF90aW1lIjoxNzEyNTg2NjA0LCJ1c2VyX2lkIjoiV092bUxkaUpEQmVBaTd3SUtiSEI3NEVkbzhzMiIsInN1YiI6IldPdm1MZGlKREJlQWk3d0lLYkhCNzRFZG84czIiLCJpYXQiOjE3MTM5NDU5NjcsImV4cCI6MTcxMzk0OTU2NywiZW1haWwiOiJkZW55c0BhbmFseXRpY3MuY28udWsiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJnb29nbGUuY29tIjpbIjExNjYxMTI5NjY1MTIzNzYwNTY4MiJdLCJlbWFpbCI6WyJkZW55c0BhbmFseXRpY3MuY28udWsiXX0sInNpZ25faW5fcHJvdmlkZXIiOiJnb29nbGUuY29tIn19.lPdNGXsk6SXMLFaf2zQr6LvvSv4L9xHwAVuTNvqrH_Tqn-6UZ55PbR9hNTk7t2uAcV_4z7186vxpM0AE3DCwIcsIMmLNCuzVr3ox23UuFeW3M8VtPfVPycpQP16IPp-U72hvmNnDsXGVKoh6-s9SgVEaGLKqM1vYx1bFGXLEX58byjeVGElZuMbH00Nq_Aioi1OAiJFXwDJ4CGSVB_kDQUM5TbnElWb9MnUJ0aJtmEbh24X2EFpHRqgwV7KZpy_bv1xCJFzUg8GsrInqnEmX42WCEsfimZV5qadrTxeRicunH9XnxRehZq_3pvCN5vnu0rSEBB3T0eg0KgQwcGRGcQ
+        - name: app-origin
+          in: header
+          schema:
+            type: string
+            example: app-test.mylocalapi.com
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_id:
+                  type: string
+                  example: "110049465546280658225"
+                keywords:
+                  type: array
+                  items:
+                    type: string
+                    example: Kinderopvang
+                  example:
+                    - Kinderopvang
+            example:
+              account_id: "110049465546280658225"
+              keywords:
+                - Kinderopvang
+      responses:
+        "200":
+          description: ""
+  /api/gmb/admin_user/contact-information:
+    post:
+      tags:
+        - notifications
+      summary: New Request Copy
+      description: New Request Copy
+      operationId: newRequestCopy1
+      parameters:
+        - name: app-origin
+          in: header
+          schema:
+            type: string
+            example: app-test.mylocalapi.com
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: weak9602@gmail.com
+                expected_number_of_location:
+                  type: string
+                  example: "600"
+                organization_name:
+                  type: string
+                  example: test
+                reason_for_onboarding:
+                  type: string
+                  example: test
+            example:
+              email: weak9602@gmail.com
+              expected_number_of_location: "600"
+              organization_name: test
+              reason_for_onboarding: test
+      responses:
+        "200":
+          description: ""
+  /api/admin/users/dda18d2b-9d6c-4d80-8a07-fedf25f80cc9:
+    put:
+      tags:
+        - notifications
+      summary: New Request Copy
+      description: New Request Copy
+      operationId: newRequestCopy2
+      parameters:
+        - name: app-origin
+          in: header
+          schema:
+            type: string
+            example: app.gmbapi.com
+      requestBody:
+        content:
+          text/plain:
+            example: "{\r\n    \"business_profiles\": [\r\n        {\r\n            \"access_level\": \"MANAGER\",\r\n            \"name\": \"Pets Place Boerenbond Nieuw\",\r\n            \"business_profile_id\": \"105237855855794909169\"\r\n        },\r\n        {\r\n            \"access_level\": \"MANAGER\",\r\n            \"name\": \"Hunkemoller\",\r\n            \"business_profile_id\": \"109088452112706925222\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Motorkledingcenter\",\r\n            \"business_profile_id\": \"108255705959781983650\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"FarmCamps\",\r\n            \"business_profile_id\": \"115861395002159242492\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Intersport Twinsport\",\r\n            \"business_profile_id\": \"111405726528291836593\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"VLIEG Makelaars\",\r\n            \"business_profile_id\": \"101891888995376420203\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"ParkBee\",\r\n            \"business_profile_id\": \"116623808389538661781\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Annadiva\",\r\n            \"business_profile_id\": \"116820594151084925122\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Tempo-Team NL\",\r\n            \"business_profile_id\": \"108328115310686183515\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Yacht NL\",\r\n            \"business_profile_id\": \"116833504867291390840\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Petrotec Group\",\r\n            \"business_profile_id\": \"116097405653876953550\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Just Brands vestigingen\",\r\n            \"business_profile_id\": \"101489433067321896823\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Hubo & Multimate\",\r\n            \"business_profile_id\": \"112847687224139786862\"\r\n        },\r\n        {\r\n            \"access_level\": \"MANAGER\",\r\n            \"name\": \"Het nieuwe Partou\",\r\n            \"business_profile_id\": \"110049465546280658225\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Het nieuwe Partou Soon\",\r\n            \"business_profile_id\": \"108120354066722259407\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Simon Levelt\",\r\n            \"business_profile_id\": \"111287542999532987085\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad FR\",\r\n            \"business_profile_id\": \"103646862952653936194\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad Search FR\",\r\n            \"business_profile_id\": \"113133091615814421620\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Shoeby\",\r\n            \"business_profile_id\": \"101655554452042420087\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"SnJ Building\",\r\n            \"business_profile_id\": \"100562344969436054263\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Sanidirect Nederland\",\r\n            \"business_profile_id\": \"110919632085180497705\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad USA\",\r\n            \"business_profile_id\": \"100455819501498767775\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"City Stasher All Listings\",\r\n            \"business_profile_id\": \"117836807618898488789\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"BoekenVoordeel Nederland\",\r\n            \"business_profile_id\": \"117855643630386269934\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"BoekenVoordeel Belgie\",\r\n            \"business_profile_id\": \"107318949210991549154\"\r\n        },\r\n        {\r\n            \"access_level\": \"MANAGER\",\r\n            \"name\": \"Xenos\",\r\n            \"business_profile_id\": \"100408463695450638302\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"SHS Repair\",\r\n            \"business_profile_id\": \"105357797156043820666\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Mercedes-Benz Service\",\r\n            \"business_profile_id\": \"113511379712773957243\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Mercedes-Benz Dealer\",\r\n            \"business_profile_id\": \"105842550145280732709\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"TEST MondoRed\",\r\n            \"business_profile_id\": \"105624931158525242129\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"TPH\",\r\n            \"business_profile_id\": \"107713125603650192279\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"HKM Employment Attorneys LLP\",\r\n            \"business_profile_id\": \"103078475638231719259\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Möbel Pfister AG\",\r\n            \"business_profile_id\": \"105635049020777802013\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Sunny Marketing\",\r\n            \"business_profile_id\": \"108704854919300577636\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Socialee\",\r\n            \"business_profile_id\": \"108037138779098976585\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"T-Mobile Nederland\",\r\n            \"business_profile_id\": \"113374350654473548301\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Doctor GMBs\",\r\n            \"business_profile_id\": \"110599311975963397913\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad Portugal\",\r\n            \"business_profile_id\": \"108500707832193035457\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Cenvar Roofing\",\r\n            \"business_profile_id\": \"111090458507757207323\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Resolution Media\",\r\n            \"business_profile_id\": \"112826696177282333093\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad Netherlands\",\r\n            \"business_profile_id\": \"110548430531769439220\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad Switzerland\",\r\n            \"business_profile_id\": \"109452761283173706160\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Stern Hedin Dealers\",\r\n            \"business_profile_id\": \"100802378242414818089\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad Sweden\",\r\n            \"business_profile_id\": \"102361789349552519473\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad India\",\r\n            \"business_profile_id\": \"100343044840157190468\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad Italia\",\r\n            \"business_profile_id\": \"116900328315697599085\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad Japan\",\r\n            \"business_profile_id\": \"102172684165544174394\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad Polska\",\r\n            \"business_profile_id\": \"108633302238907843153\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad Hungary\",\r\n            \"business_profile_id\": \"111840971533652708969\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad Austria\",\r\n            \"business_profile_id\": \"100308315385253103963\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad Greece\",\r\n            \"business_profile_id\": \"107638323527162431221\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad UK\",\r\n            \"business_profile_id\": \"109345597186788380913\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad Espana\",\r\n            \"business_profile_id\": \"114845751208229499596\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad Belgium\",\r\n            \"business_profile_id\": \"102338326330956366821\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad Chile\",\r\n            \"business_profile_id\": \"102325330936631206017\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad Turkey\",\r\n            \"business_profile_id\": \"100818061920558967007\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad New Zealand\",\r\n            \"business_profile_id\": \"100469196121907992189\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad Argentina\",\r\n            \"business_profile_id\": \"118034507046518862145\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Steuerring\",\r\n            \"business_profile_id\": \"106017823476691023201\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad Canada\",\r\n            \"business_profile_id\": \"109214914264558712544\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Maqloba | مقلوبة\",\r\n            \"business_profile_id\": \"109007861775886433600\"\r\n        },\r\n        {\r\n            \"access_level\": \"MANAGER\",\r\n            \"name\": \"Prominent Alle Fillialen\",\r\n            \"business_profile_id\": \"115940261456703116853\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad Norway\",\r\n            \"business_profile_id\": \"100441088497834937198\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad Germany\",\r\n            \"business_profile_id\": \"117992585400728397002\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Lyceo\",\r\n            \"business_profile_id\": \"114684431310282590056\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"HR Partners\",\r\n            \"business_profile_id\": \"109051472579275070697\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Primera\",\r\n            \"business_profile_id\": \"114942468270522859983\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"D-reizen\",\r\n            \"business_profile_id\": \"107665924135676840167\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Laker Legal Solicitors\",\r\n            \"business_profile_id\": \"108653674719512767958\"\r\n        },\r\n        {\r\n            \"access_level\": \"MANAGER\",\r\n            \"name\": \"Giulietti e Guerra\",\r\n            \"business_profile_id\": \"108854276816660283275\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Luba Groep\",\r\n            \"business_profile_id\": \"105734926609115352252\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Glaspunt\",\r\n            \"business_profile_id\": \"106353699183791447505\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad SG, HK & MY\",\r\n            \"business_profile_id\": \"107602779662556445325\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"SoLow\",\r\n            \"business_profile_id\": \"108285865797836875960\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Steuerring-Sued\",\r\n            \"business_profile_id\": \"114979958196837613619\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Steuerring-Ost\",\r\n            \"business_profile_id\": \"100440292824261836457\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"SG Synergym\",\r\n            \"business_profile_id\": \"116066762755683697155\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Just Childcare\",\r\n            \"business_profile_id\": \"109774330300924370302\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"NYC DNA Testing\",\r\n            \"business_profile_id\": \"104540784202061422350\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"MABI Mobility\",\r\n            \"business_profile_id\": \"100172119666593977087\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"SEO Pflege\",\r\n            \"business_profile_id\": \"104792317317877383251\"\r\n        },\r\n        {\r\n            \"access_level\": \"MANAGER\",\r\n            \"name\": \"Marketing eye -oo\",\r\n            \"business_profile_id\": \"107034579087174431725\"\r\n        },\r\n        {\r\n            \"access_level\": \"MANAGER\",\r\n            \"name\": \"Randstad Mexico\",\r\n            \"business_profile_id\": \"104329064074872170571\"\r\n        },\r\n        {\r\n            \"access_level\": \"MANAGER\",\r\n            \"name\": \"MERCEDES-BENZ | Service - Not on list\",\r\n            \"business_profile_id\": \"110520998627213050082\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Werner Weber\",\r\n            \"business_profile_id\": \"104429746922102039943\"\r\n        },\r\n        {\r\n            \"access_level\": \"MANAGER\",\r\n            \"name\": \"Ralin Kosev\",\r\n            \"business_profile_id\": \"116011675473706006462\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Randstad Romania\",\r\n            \"business_profile_id\": \"108148964309980465013\"\r\n        },\r\n        {\r\n            \"access_level\": \"MANAGER\",\r\n            \"name\": \"DRS Branches\",\r\n            \"business_profile_id\": \"107407354989152709207\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"HV vestigingen\",\r\n            \"business_profile_id\": \"109883108863754400607\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Clinics\",\r\n            \"business_profile_id\": \"100246172233807529242\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Alex van de Pol\",\r\n            \"business_profile_id\": \"103732442145971621210\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Cameranu\",\r\n            \"business_profile_id\": \"107884081827820358227\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Vakgarage\",\r\n            \"business_profile_id\": \"111383360332667730918\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Jose Servera\",\r\n            \"business_profile_id\": \"111164026897815338623\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Quiosk\",\r\n            \"business_profile_id\": \"112560751525778811190\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"BCC winkels\",\r\n            \"business_profile_id\": \"116376790818573016428\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Elysium Groups\",\r\n            \"business_profile_id\": \"114602969681921081495\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Ed Eshel\",\r\n            \"business_profile_id\": \"103807649813810172822\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"\",\r\n            \"business_profile_id\": \"\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Tracy Samuels\",\r\n            \"business_profile_id\": \"118237970342850917001\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Avocons\",\r\n            \"business_profile_id\": \"100784168794443004515\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Africa\",\r\n            \"business_profile_id\": \"104727998142893103580\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Boxie24 All Locations\",\r\n            \"business_profile_id\": \"101269676229401606991\"\r\n        },\r\n        {\r\n            \"access_level\": \"MANAGER\",\r\n            \"name\": \"Up Analytics\",\r\n            \"business_profile_id\": \"110403973594798485729\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Nederland\",\r\n            \"business_profile_id\": \"102360257625822080718\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"test\",\r\n            \"business_profile_id\": \"113775487244222361815\"\r\n        },\r\n        {\r\n            \"access_level\": \"MANAGER\",\r\n            \"name\": \"België\",\r\n            \"business_profile_id\": \"111115519055602225490\"\r\n        },\r\n        {\r\n            \"access_level\": \"MANAGER\",\r\n            \"name\": \"Duitsland\",\r\n            \"business_profile_id\": \"115345353566541101034\"\r\n        },\r\n        {\r\n            \"access_level\": \"MANAGER\",\r\n            \"name\": \"Frankrijk\",\r\n            \"business_profile_id\": \"115327916031731557365\"\r\n        },\r\n        {\r\n            \"access_level\": \"MANAGER\",\r\n            \"name\": \"Luxemburg\",\r\n            \"business_profile_id\": \"102832951735883242059\"\r\n        },\r\n        {\r\n            \"access_level\": \"MANAGER\",\r\n            \"name\": \"Oostenrijk\",\r\n            \"business_profile_id\": \"112386951730754553753\"\r\n        },\r\n        {\r\n            \"access_level\": \"MANAGER\",\r\n            \"name\": \"Spanje\",\r\n            \"business_profile_id\": \"113115652312579970586\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Darrel Dressel\",\r\n            \"business_profile_id\": \"103330076902349592545\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Sklep Celcjusz\",\r\n            \"business_profile_id\": \"111789610141316008524\"\r\n        },\r\n        {\r\n            \"access_level\": \"MANAGER\",\r\n            \"name\": \"Air Media\",\r\n            \"business_profile_id\": \"104499791427800395467\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Dutch Quality Gardens\",\r\n            \"business_profile_id\": \"111454417170629965823\"\r\n        },\r\n        // {\r\n        //     \"access_level\": \"USER\",\r\n        //     \"name\": \"QoQo Massage Clinics\",\r\n        //     \"business_profile_id\": \"112064907307753992231\"\r\n        // },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Seguimiento Centros propios\",\r\n            \"business_profile_id\": \"100726049277598167743\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Zeeman - Alle locaties\",\r\n            \"business_profile_id\": \"109434981611969292440\"\r\n        },\r\n        {\r\n            \"access_level\": \"USER\",\r\n            \"name\": \"Bakker Bart\",\r\n            \"business_profile_id\": \"106596649229815513416\"\r\n        },\r\n        // {\r\n        //     \"access_level\": \"USER\",\r\n        //     \"name\": \"ALBA Nord\",\r\n        //     \"business_profile_id\": \"109264917327757510927\"\r\n        // },\r\n        // {\r\n        //     \"access_level\": \"USER\",\r\n        //     \"name\": \"Steuerring 001-499\",\r\n        //     \"business_profile_id\": \"103781566577164101142\"\r\n        // },\r\n        {\r\n            \"access_level\": \"MANAGER\",\r\n            \"name\": \"D-reizen geopend\",\r\n            \"business_profile_id\": \"109429757493147141061\"\r\n        }\r\n        // {\r\n        //     \"access_level\": \"USER\",\r\n        //     \"name\": \"AJFAN DATES AND NUTS\",\r\n        //     \"business_profile_id\": \"106604088601327548426\"\r\n        // },\r\n        // {\r\n        //     \"access_level\": \"USER\",\r\n        //     \"name\": \"EU_SEUC(Ukraine)\",\r\n        //     \"business_profile_id\": \"115705022703073198434\"\r\n        // },\r\n        // {\r\n        //     \"access_level\": \"USER\",\r\n        //     \"name\": \"Local Insights - LIVE\",\r\n        //     \"business_profile_id\": \"118075969224051598775\"\r\n        // },\r\n        // {\r\n        //     \"access_level\": \"USER\",\r\n        //     \"name\": \"Emin Molaahmed\",\r\n        //     \"business_profile_id\": \"114769371391889070171\"\r\n        // },\r\n        // {\r\n        //     \"business_profile_id\": \"111649256495093994119\",\r\n        //     \"name\": \"Jack Williams\",\r\n        //     \"access_level\": \"USER\"\r\n        // },\r\n        // {\r\n        //     \"business_profile_id\": \"117535760612000651871\",\r\n        //     \"name\": \"YBNL\",\r\n        //     \"access_level\": \"USER\"\r\n        // }\r\n    ],\r\n    \"billing_account\": [\r\n        {\r\n            \"id\": \"16980e3b-e5fb-490b-b478-7a917e22866a\",\r\n            \"name\": \"Adbirds\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"28b537cf-e51e-48bf-8718-2aa8da62fe10\",\r\n            \"name\": \"Hunkemoller\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"0554a695-c16a-47fe-ae7c-499f6ebd8e1d\",\r\n            \"name\": \"Zeo\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"37cc3ab2-2eab-485e-9220-9eff7104c6ac\",\r\n            \"name\": \"FarmCamps\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"75a64d98-9e58-45d8-8e20-a82b5e8e04c8\",\r\n            \"name\": \"IWB Agency\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"41b794a2-eb6e-48c6-a323-5c2a3500e90c\",\r\n            \"name\": \"VLIEG Makelaars\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"c5e3d814-93ed-4f4b-b86a-03237f1c54fb\",\r\n            \"name\": \"ParkBee\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"fbef5333-b566-4012-a4bb-5e9c96961c78\",\r\n            \"name\": \"Bakker Bart\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        // {\r\n        //     \"id\": \"66a12520-8872-47cd-b746-21ab120bee98\",\r\n        //     \"name\": \"Annadiva\",\r\n        //     \"access_level\": \"USER\"\r\n        // },\r\n        {\r\n            \"id\": \"17500ebf-bff4-44e8-ae94-160316c30c34\",\r\n            \"name\": \"Randstad\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"2c04aec8-3e58-4e9b-90a6-18df98aed7fe\",\r\n            \"name\": \"Demo 250 listings\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"5d45a83d-572d-4fe6-adb9-c47a26859a61\",\r\n            \"name\": \"Petrotec Group\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"4655617c-f0b4-4f7b-9318-0e400bdb5ddc\",\r\n            \"name\": \"Just Brands vestigingen\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"e3c2a336-83e8-4244-97b9-cd920d079014\",\r\n            \"name\": \"Hubo & Multimate\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"b4e5ecd4-9f04-41f8-a50a-2c713ded0ba6\",\r\n            \"name\": \"Het nieuwe Partou\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"322cc6c1-ac46-4f83-97ce-43d14efe2ffa\",\r\n            \"name\": \"Shoeby\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"babfc1cc-a696-49da-81bc-310c7d6c441d\",\r\n            \"name\": \"SnJ Building\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"0865d7cb-2f6a-4468-9752-597a47c8530f\",\r\n            \"name\": \"Springbok\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"23b49d7b-086d-446f-b4fd-f010b29e1ade\",\r\n            \"name\": \"City Stasher All Listings\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"b6c69cda-8fa9-4378-a7ff-5ceda9d6e845\",\r\n            \"name\": \"BoekenVoordeel\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"53713632-c83f-4f4b-a2d2-c9f26c373563\",\r\n            \"name\": \"Xenos\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"815ebee4-432a-4264-b33a-b2c3dba6ce92\",\r\n            \"name\": \"SHS Repair\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"7108ddfa-d99e-4d71-b52e-b417121a9267\",\r\n            \"name\": \"DLV BBDO\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"50b08813-750b-4b5e-bdbd-c9b1a507716c\",\r\n            \"name\": \"TEST MondoRed\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"7c7de40b-5895-4a47-b0ab-507e91612963\",\r\n            \"name\": \"TPH\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"2b62d862-c4c8-4f11-bd08-3b4d8c19d6bf\",\r\n            \"name\": \"HKM Employment Attorneys LLP\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"c868fa33-7114-4864-870e-15be46436012\",\r\n            \"name\": \"Möbel Pfister AG\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"6dee66b1-552e-4745-ae1c-cd8993d8849e\",\r\n            \"name\": \"Sunny Marketing\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"91013cbd-eb05-488b-836d-7e2748e6e002\",\r\n            \"name\": \"Socialee\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"ea58dd44-281e-49bb-9b76-34e1bb18cc1e\",\r\n            \"name\": \"Doctor GMBs\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"f01cc86c-6ad6-4f79-b0d1-22d4bca12ee9\",\r\n            \"name\": \"Cenvar Roofing\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"220344cc-1f8c-4c51-8815-614e7f0a718d\",\r\n            \"name\": \"Resolution Media\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"ec20cd19-8371-4c0a-8a30-67aa90efafc2\",\r\n            \"name\": \"Hedin\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"e8d7f015-6817-47a5-a88a-9836b1ed9a3a\",\r\n            \"name\": \"Steuerring\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"04eb935f-b6ca-4b85-a8ad-649417e7a63a\",\r\n            \"name\": \"Maqloba | مقلوبة\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"a5c73985-195b-4264-b8ad-c8e0041e0c16\",\r\n            \"name\": \"IO Digital\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"a51ef1ea-bf51-4a7c-b09f-46fb0c029fa7\",\r\n            \"name\": \"Lyceo\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"ddbff9cf-c509-4454-a32e-a1eedccde565\",\r\n            \"name\": \"HR Partners\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"dafbb63d-fc73-4525-a8fb-4a0bcf11697f\",\r\n            \"name\": \"Primera\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"3ec9c825-8280-4f21-a53b-76d888c5961e\",\r\n            \"name\": \"PrijsVrij\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"decd5dc1-b8cc-4afb-ad02-871ffe770cc9\",\r\n            \"name\": \"Laker Legal Solicitors\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"ef9557cd-e6ec-4403-8226-2a8d4fd57e50\",\r\n            \"name\": \"Giulietti e Guerra\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"2dc8f33b-2e3f-4dac-be34-cd5e49a5ab08\",\r\n            \"name\": \"Stramark\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"c5eff92e-e316-4c92-a8a3-1db22aa2b7c0\",\r\n            \"name\": \"Glaspunt\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"8da8159a-6ed7-4ba9-837d-4644735dbfd6\",\r\n            \"name\": \"SoLow\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"41bb8774-47cf-4310-a4b2-6444eff61e35\",\r\n            \"name\": \"SG Synergym\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"783bdf97-bd15-42b2-b2a2-fe7bf527b89a\",\r\n            \"name\": \"NYC DNA Testing\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"1ddb0752-5440-46cc-a3cd-03af0cb38c98\",\r\n            \"name\": \"Online Standard\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"d39f1567-2fd8-4023-983b-a89a409cbc4e\",\r\n            \"name\": \"Marketing eye -oo\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"7c6ff02c-6545-416f-828a-a4ef046186ce\",\r\n            \"name\": \"Ralin Kosev\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"8b8bd1b2-b7e1-4149-8fc7-eb64e708287e\",\r\n            \"name\": \"DRS Branches\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"8b91faac-7419-4bc3-9a63-6e2ae17d262e\",\r\n            \"name\": \"HV vestigingen\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"5898d28b-f333-40b5-9b1c-69f4ed8162eb\",\r\n            \"name\": \"Clinics\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"ea6d8890-328a-4401-aefb-af0b78c0f21f\",\r\n            \"name\": \"Alex van de Pol\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"fb01ea61-241a-4ba4-b6f3-231acc976e31\",\r\n            \"name\": \"Cameranu\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"4fff2bd4-42cd-4a4b-bdde-061928b6e6ac\",\r\n            \"name\": \"Problicity\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"04e39a53-47b3-4c77-9375-c6b89dd5d07d\",\r\n            \"name\": \"Jose Servera\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"b0abf9c6-63b7-4185-9d88-de02f493db42\",\r\n            \"name\": \"Quiosk\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"06df7574-398f-4772-a567-0b53a4b6f9c4\",\r\n            \"name\": \"BCC winkels\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"14f1f390-cbbd-4d4a-999d-3dfe39c72fb7\",\r\n            \"name\": \"Elysium Groups\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"8cca4a5e-8b81-4b62-90d7-56dbf517eda0\",\r\n            \"name\": \"Ed Eshel\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"94b797f8-f821-4f79-bf56-22a4007db6e5\",\r\n            \"name\": \"Tracy Samuels\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"db43bb0c-307b-4698-9c68-4ba5a3847755\",\r\n            \"name\": \"Africa\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"04466409-7dd9-42a4-a7ce-b78fa95226a0\",\r\n            \"name\": \"Boxie24 All Locations\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"89f059c6-7b08-47a6-90fe-805a0cb18d31\",\r\n            \"name\": \"Up Analytics\",\r\n            \"access_level\": \"OWNER\"\r\n        },\r\n        {\r\n            \"id\": \"66a4c436-b890-4525-ab0e-4836bc41652b\",\r\n            \"name\": \"test\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"6bb36947-ce55-409d-964a-b596e6248281\",\r\n            \"name\": \"België\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"e196729d-5c06-4aa1-a73d-1005d790e59a\",\r\n            \"name\": \"Duitsland\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"917e68d1-3874-4803-af56-bccf50eb5064\",\r\n            \"name\": \"Frankrijk\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"c4ce980f-4aac-43b1-9487-088d6957dab7\",\r\n            \"name\": \"Luxemburg\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"9ec038db-5a03-4273-9077-ff7defd030fd\",\r\n            \"name\": \"Oostenrijk\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"9cc6af87-2de7-4d2b-a6f4-ebde199d5946\",\r\n            \"name\": \"Spanje\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"8c314803-882a-43e7-8335-73ec8e302006\",\r\n            \"name\": \"Darrel Dressel\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"4b3031e0-64c8-4044-bc29-44b6069cbeaa\",\r\n            \"name\": \"Avocons\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"504d5262-b935-4457-b2ac-26301596ee73\",\r\n            \"name\": \"Sklep Celcjusz\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"5a47afb1-cdab-4178-9f27-ee047ccb8f58\",\r\n            \"name\": \"Air Media\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"bf28797b-084c-4ad0-842f-02a31467a886\",\r\n            \"name\": \"Dutch Quality Gardens\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"ca18f208-cc73-4413-b596-4f2ba8d58ffe\",\r\n            \"name\": \"QoQo Massage Clinics\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"30f52e65-3756-4a16-9ac8-3446e879ac2d\",\r\n            \"name\": \"Seguimiento Centros propios\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"fa82e7a1-e06e-443e-975d-f8fe6f5a80d4\",\r\n            \"name\": \"Zeeman - Alle locaties\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"14a06f1e-a641-4955-ad89-420c681011d5\",\r\n            \"name\": \"ALBA Nord\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"f4c23694-2e03-491b-a418-33a2d488fc76\",\r\n            \"name\": \"VA-1\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"4ed95961-9ab6-48c0-a56d-c00c8d54d84c\",\r\n            \"name\": \"Steuerring 001-999\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"3a01e5cc-0640-4357-91d1-afe93413b529\",\r\n            \"name\": \"AJFAN DATES AND NUTS\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"89f059c6-7b08-47a6-90fe-805a0cb18d31\",\r\n            \"name\": \"Up Analytics\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"6673c193-1797-4767-a673-57521271daae\",\r\n            \"name\": \"EU_SEUC(Ukraine)\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"66780993-6b03-4736-8938-8793ba865cad\",\r\n            \"name\": \"Local Insights - LIVE\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"18c38a2d-98ec-4df3-99b3-cec8a58b2758\",\r\n            \"name\": \"Emin Molaahmed\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"62c7f775-0a81-4284-bd31-3dd0122163f6\",\r\n            \"name\": \"Hamdi Ssf\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"d64a1cbc-8f3d-4be8-9781-6ccf1e73302e\",\r\n            \"name\": \"Jack Williams\",\r\n            \"access_level\": \"USER\"\r\n        },\r\n        {\r\n            \"id\": \"2064a1eb-a932-40cd-b232-0f8af5a1b55f\",\r\n            \"name\": \"YBNL\",\r\n            \"access_level\": \"USER\"\r\n        }\r\n    ]\r\n}"
+      responses:
+        "200":
+          description: ""
+  /api/admin/user/dda18d2b-9d6c-4d80-8a07-fedf25f80cc9:
+    put:
+      tags:
+        - notifications
+      summary: New Request Copy 2
+      description: New Request Copy 2
+      operationId: newRequestCopy21
+      parameters:
+        - name: app-origin
+          in: header
+          schema:
+            type: string
+            example: app.gmbapi.com
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                billing_account:
+                  type: array
+                  items: {}
+                  example: []
+                business_profiles:
+                  type: array
+                  items: {}
+                  example: []
+            example:
+              billing_account: []
+              business_profiles: []
+      responses:
+        "200":
+          description: ""
+  /crm/v3/properties/contacts:
+    get:
+      tags:
+        - notifications
+      summary: New Request Copy 2
+      description: New Request Copy 2
+      operationId: newRequestCopy22
+      parameters:
+        - name: app-origin
+          in: header
+          schema:
+            type: string
+            example: app-test.mylocalapi.com
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: dawoodshahat@gmail.com
+            example:
+              email: dawoodshahat@gmail.com
+      responses:
+        "200":
+          description: ""
+  /collections/{collectionId}:
+    get:
+      tags:
+        - notifications
+      summary: New Request Copy 3
+      description: New Request Copy 3
+      operationId: newRequestCopy31
+      parameters:
+        - name: X-Goog-Api-Key
+          in: header
+          schema:
+            type: string
+            example: AIzaSyDeGN0CuWZ8M7tQdYBGCgMrarf6OW-SkPg
+        - name: X-Goog-FieldMask
+          in: header
+          schema:
+            type: string
+            example: "*"
+      responses:
+        "200":
+          description: ""
+    parameters:
+      - name: collectionId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: 13165206-e62f8f4d-0028-4d3c-aa9e-124a71ba676b
+tags:
+  - name: review
+  - name: account
+  - name: location
+  - name: account_location
+  - name: access_by_user
+  - name: activation_code
+  - name: qrcodes
+  - name: feedback
+  - name: post
+  - name: KPI
+  - name: auth
+  - name: "attribute "
+  - name: question
+  - name: template
+  - name: reviewSummary
+  - name: notifications

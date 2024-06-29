@@ -11,11 +11,16 @@
   "servers": [
     {
       "url": "http://sandbox.mintlify.com"
+    },
+    {
+      "url": "app-test.mylocalapi.com"
     }
   ],
   "security": [
     {
-      "bearerAuth": []
+      "bearerAuth": [
+        ""
+      ]
     }
   ],
   "paths": {
@@ -118,6 +123,48 @@
           },
           "400": {
             "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/profile/{location_id}": {
+      "get": {
+        "description": "Returns all plants from the system that the user has access to",
+        "parameters": [
+          {
+            "name": "location_id",
+            "in": "path",
+            "description": "Location Id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Plant response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Plant"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
             "content": {
               "application/json": {
                 "schema": {

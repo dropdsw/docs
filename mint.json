@@ -81,6 +81,12 @@
         "api-reference/endpoint/create",
         "api-reference/endpoint/delete"
       ]
+    },
+    {
+      "group": "Endpoint Examples2",
+      "pages": [
+        "api-reference/endpoint2/get"
+      ]
     }
   ],
   "footerSocials": {
